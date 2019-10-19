@@ -1,0 +1,9 @@
+migration:
+  create_app_setting_table:
+    fields: |
+      key:string(50),
+      value:text,
+      created_at:integer,
+      updated_at:integer
+model:
+  app_setting:

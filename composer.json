@@ -18,8 +18,7 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
-      "userSettings": "config/userSettings.php",
+    "config-plugin": {
       "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }
