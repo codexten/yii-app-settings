@@ -1,0 +1,26 @@
+
+{
+  "name": "codexten/yii-app-settings",
+  "description": "codexten,yii,settings",
+  "keywords": [
+    "eii"
+  ],
+  "type": "library",
+  "require": {
+    "codexten/yii-settings": "^2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "codexten\\yii\\app\\settings\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    },
+    "sconfig-plugin": {
+      "userSettings": "config/userSettings.php",
+      "migrationNamespaces": "config/migrationNamespaces.php"
+    }
+  }
+}
