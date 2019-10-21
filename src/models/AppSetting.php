@@ -35,8 +35,8 @@ class AppSetting extends ActiveRecord
     public function rules()
     {
         return [
-            [['value'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
+            [['value'], 'safe'],
             [['key'], 'string', 'max' => 50],
         ];
     }
