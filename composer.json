@@ -19,6 +19,7 @@
       "dev-master": "2.0.x-dev"
     },
     "config-plugin": {
+      "core": "config/appSettings.php",
       "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }
