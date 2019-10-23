@@ -9,12 +9,23 @@ use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
+
+/**
+ * Class AppSettings
+ *
+ * @package codexten\yii\app\settings\components
+ *
+ * @property ActiveQuery $baseQuery
+ */
 class AppSettings extends Component
 {
     public $modelClass = AppSetting::class;
 
     public $cacheKey = 'appSettings';
 
+    /**
+     * @return ActiveQuery
+     */
     public function getBaseQuery()
     {
         /* @var $modelClass ActiveRecord */
@@ -38,7 +49,6 @@ class AppSettings extends Component
     public function set($key, $value)
     {
         $attributes = ['key' => $key, 'value' => $value];
-
         $model = $this->getModel($attributes);
 
         return $model->save();
