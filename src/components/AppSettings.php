@@ -43,12 +43,18 @@ class AppSettings extends Component
         /* @var $modelClass ActiveRecord */
         $modelClass = $this->modelClass;
 
+        $model = $modelClass::findOne($attributes);
+        if ($model) {
+            return $model;
+        }
+
         return new $modelClass($attributes);
     }
 
     public function set($key, $value)
     {
         $attributes = ['key' => $key, 'value' => $value];
+
         $model = $this->getModel($attributes);
 
         return $model->save();
@@ -58,6 +64,7 @@ class AppSettings extends Component
     {
 
         $model = $this->getBaseQuery()->andWhere(['key' => $key])->one();
+
 
         return $model ? $model['value'] : $default;
     }
