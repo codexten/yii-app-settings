@@ -54,7 +54,6 @@ class AppSettings extends Component
     public function set($key, $value)
     {
         $attributes = ['key' => $key, 'value' => $value];
-
         $model = $this->getModel($attributes);
 
         return $model->save();
@@ -64,7 +63,6 @@ class AppSettings extends Component
     {
 
         $model = $this->getBaseQuery()->andWhere(['key' => $key])->one();
-
 
         return $model ? $model['value'] : $default;
     }
