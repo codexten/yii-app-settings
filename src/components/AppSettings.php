@@ -43,6 +43,11 @@ class AppSettings extends Component
         /* @var $modelClass ActiveRecord */
         $modelClass = $this->modelClass;
 
+        $model = $modelClass::findOne($attributes);
+        if ($model) {
+            return $model;
+        }
+
         return new $modelClass($attributes);
     }
 
