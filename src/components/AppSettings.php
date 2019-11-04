@@ -7,7 +7,6 @@ use codexten\yii\app\settings\models\AppSetting;
 use yii\base\Component;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use yii\helpers\ArrayHelper;
 
 
 /**
@@ -51,15 +50,25 @@ class AppSettings extends Component
         return new $modelClass($attributes);
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @return bool
+     */
     public function set($key, $value)
     {
-        $attributes = ['key' => $key, 'value' => $value];
+        $attributes = ['key' => $key];
 
         $model = $this->getModel($attributes);
-
+        $model->value = $value;
         return $model->save();
     }
 
+    /**
+     * @param $key
+     * @param  null  $default
+     * @return mixed|null
+     */
     public function get($key, $default = null)
     {
 
