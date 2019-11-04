@@ -53,10 +53,10 @@ class AppSettings extends Component
 
     public function set($key, $value)
     {
-        $attributes = ['key' => $key, 'value' => $value];
+        $attributes = ['key' => $key];
 
         $model = $this->getModel($attributes);
-
+        $model->value = $value;
         return $model->save();
     }
 
