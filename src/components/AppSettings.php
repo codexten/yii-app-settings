@@ -51,6 +51,11 @@ class AppSettings extends Component
         return new $modelClass($attributes);
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @return bool
+     */
     public function set($key, $value)
     {
         $attributes = ['key' => $key];
@@ -60,6 +65,11 @@ class AppSettings extends Component
         return $model->save();
     }
 
+    /**
+     * @param $key
+     * @param  null  $default
+     * @return mixed|null
+     */
     public function get($key, $default = null)
     {
 
